@@ -153,7 +153,7 @@ cd ~/.vim/bundle/YouCompleteMe
 
     YouCompleteMe unavailable: requires Vim 7.4.1578+.
 
-请参考如下链接：[CENTOS7安装VIM插件YOUCOMPLETEME](http://dreamlikes.cn/archives/940)
+请参考如下链接：[CENTOS7安装VIM插件YOUCOMPLETEME](http://dreamlikes.cn/archives/940) ，就是移除系统自带的vim工具，用源码包编译安装一下即可。
 
 
 
