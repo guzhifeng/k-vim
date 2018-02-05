@@ -96,11 +96,31 @@ npm install -g eslint eslint-plugin-standard eslint-plugin-promise eslint-config
 
 ### 3. 安装
 
-1. 在CentOS7下安装之前，为了避免出现如下的错误，需要先卸载rpm包安装的vim，使用源码编译安装下vim：
+1. 在CentOS7下安装之前，很有可能会出现如下的错误：
 
     YouCompleteMe unavailable: requires Vim 7.4.1578+.
 
-请参考如下链接：[CENTOS7安装VIM插件YOUCOMPLETEME](http://dreamlikes.cn/archives/940) ，移除系统自带的vim工具，源码包编译安装一下即可。
+为了避免这个问题的发生，需要先卸载rpm包安装的vim，使用源码编译安装下vim：
+
+```
+yum remove vim -y
+yum install ncurses-devel python-devel -y
+git clone https://github.com/vim/vim.git
+cd vim/src
+./configure --with-features=huge --enable-pythoninterp=yes --enable-cscope --enable-fontset --with-python-config-dir=/usr/lib64/python2.7/config
+make
+make install
+```
+
+编译安装好Vim后，默然是安装在/usr/local/bin目录下，所以把该目录加入到PATH方便terminal全局使用：
+
+```
+vi /etc/profile
+export PATH=$PATH:/usr/local/bin/vim	
+source /etc/profile
+```
+
+参考链接：[CENTOS7安装VIM插件YOUCOMPLETEME](http://dreamlikes.cn/archives/940) 
 
 2. 进入目录, 执行安装
 
