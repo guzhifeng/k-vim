@@ -96,8 +96,15 @@ npm install -g eslint eslint-plugin-standard eslint-plugin-promise eslint-config
 
 ### 3. 安装
 
+1. 在CentOS7下安装之前，为了避免出现如下的错误，需要先卸载rpm包安装的vim，使用源码编译安装下vim：
+
+    YouCompleteMe unavailable: requires Vim 7.4.1578+.
+
+请参考如下链接：[CENTOS7安装VIM插件YOUCOMPLETEME](http://dreamlikes.cn/archives/940) ，移除系统自带的vim工具，源码包编译安装一下即可。
+
+2. 进入目录, 执行安装
+
 ```
-进入目录, 执行安装
 # 注意原先装过的童鞋, 重装时，不要到~/.vim下执行(这是软连接指向k-vim真是目录)，必须到k-vim原生目录执行
 # 会进入安装插件的列表，一安装是从github clone的，完全取决于网速, 之后会自动编译 YCM, 编译失败的话需要手动编译, 有问题见YCM文档
 # 如果发现有插件安装失败 可以进入vim, 执行`:PlugInstall'
@@ -108,6 +115,7 @@ sh -x install.sh
 
 ------------------------
 ------------------------
+
 
 # 移除安装
 
@@ -140,26 +148,16 @@ let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 
 选定集合后, 使用插件管理工具进行安装/更新
 
 
----------------------------------
 
-**补充1**：安装补全工具（当在代码中输入`.`时，自动联想）：
+**补充1**：如果上述安装补全工具失败，可以参考如下步骤，重新安装一下（当在代码中输入`.`时，自动联想）：
 
 ```
+wget -O ~/YouCompleteMe.tar.gz "http://ohpunyak1.bkt.clouddn.com/YouCompleteMe.tar.gz"
+cd ~/.vim/bundle
+tar -zxf ~/YouCompleteMe.tar.gz
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer --system-libclang
 ```
-
-**补充2**：如果安装后还是提示：
-
-    YouCompleteMe unavailable: requires Vim 7.4.1578+.
-
-请参考如下链接：[CENTOS7安装VIM插件YOUCOMPLETEME](http://dreamlikes.cn/archives/940) ，就是移除系统自带的vim工具，用源码包编译安装一下即可。
-
-
-
-
-
-
 
 
 
