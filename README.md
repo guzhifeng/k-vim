@@ -141,12 +141,27 @@ let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 
 
 
 
-**补充**：安装补全工具（当在代码中输入`.`时，自动联想）：
+**补充1**：安装补全工具（当在代码中输入`.`时，自动联想）：
 
 ```
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer --system-libclang
 ```
+
+**补充2**：如果安装后还是提示：
+
+    YouCompleteMe unavailable: requires Vim 7.4.1578+.
+
+请参考如下链接：
+
+    [CENTOS7安装VIM插件YOUCOMPLETEME](http://dreamlikes.cn/archives/940)
+
+
+
+
+
+
+
 
 
 ### 插件管理
