@@ -140,10 +140,13 @@ let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 
 选定集合后, 使用插件管理工具进行安装/更新
 
 
-补充：安装补全工具（当在代码中输入`.`时，自动联想）：
 
+**补充**：安装补全工具（当在代码中输入`.`时，自动联想）：
+
+```
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer --system-libclang
+```
 
 
 ### 插件管理
