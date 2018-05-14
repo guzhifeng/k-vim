@@ -49,6 +49,13 @@ lnif() {
     fi
 }
 
+echo "step0: add vimdiff color file"
+today=`date +%Y%m%d`
+mkdir -p $HOME/.vim/colors
+VimDifCol="$HOME/.vim/colors/apprentice.vim"
+[ -e $VimDifCol ] && [ ! -L $VimDifCol ] && mv $VimDifCol $VimDifCol.$today
+[ -L $VimDifCol ] && unlink $VimDifCol
+lnif $CURRENT_DIR/apprentice.vim $HOME/apprentice.vim
 
 echo "Step1: backing up current vim config"
 today=`date +%Y%m%d`
