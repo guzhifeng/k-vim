@@ -65,3 +65,8 @@ let &guicursor = &guicursor . ",a:blinkon0"
 set nu
 set paste
 set ic
+
+
+if &diff
+    colorscheme apprentice
+endif

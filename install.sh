@@ -56,6 +56,11 @@ VimDifCol="$HOME/.vim/colors/apprentice.vim"
 [ -e $VimDifCol ] && [ ! -L $VimDifCol ] && mv $VimDifCol $VimDifCol.$today
 [ -L $VimDifCol ] && unlink $VimDifCol
 lnif $CURRENT_DIR/apprentice.vim $HOME/apprentice.vim
+cat <<EOF >> ~/.vimrc
+if &diff
+    colorscheme apprentice
+endif
+EOF
 
 echo "Step1: backing up current vim config"
 today=`date +%Y%m%d`
