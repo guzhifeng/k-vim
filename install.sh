@@ -55,7 +55,7 @@ mkdir -p $HOME/.vim/colors
 VimDifCol="$HOME/.vim/colors/apprentice.vim"
 [ -e $VimDifCol ] && [ ! -L $VimDifCol ] && mv $VimDifCol $VimDifCol.$today
 [ -L $VimDifCol ] && unlink $VimDifCol
-lnif $CURRENT_DIR/apprentice.vim $HOME/apprentice.vim
+lnif $CURRENT_DIR/apprentice.vim $HOME/.vim/colors/apprentice.vim
 cat <<EOF >> ~/.vimrc
 if &diff
     colorscheme apprentice
